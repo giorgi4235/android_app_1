@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/user"
+        android:contentDescription="User Icon" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email here"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="48dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/okayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Okay"
+        android:textSize="16sp"
+        android:background="@drawable/button_border"
+        android:textColor="@color/black"
+        android:layout_marginTop="96dp"
+        android:minHeight="48dp"
+        android:minWidth="96dp"
+        android:padding="4dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="16sp"
+        android:background="@drawable/button_border"
+        android:textColor="@color/black"
+        android:layout_marginTop="96dp"
+        android:minHeight="48dp"
+        android:minWidth="96dp"
+        android:padding="4dp"
+        />
+</LinearLayout>
