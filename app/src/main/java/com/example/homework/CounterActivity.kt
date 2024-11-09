@@ -1,32 +1,28 @@
 package com.example.homework
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.homework.databinding.ActivityCounterBinding
 
 class CounterActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityCounterBinding
     private var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_counter)
+        // Initialize View Binding
+        binding = ActivityCounterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
-        val userTextView = findViewById<TextView>(R.id.userTextView)
-        val counterTextView = findViewById<TextView>(R.id.counterTextView)
-        val clickButton = findViewById<Button>(R.id.nextButton)
-
-
+        // Get email from intent
         val email = intent.getStringExtra("email")
-        userTextView.text = email ?: "Guest"
+        binding.userTextView.text = email ?: "Guest"
 
-
-        clickButton.setOnClickListener {
+        // Set up click listener for counter button
+        binding.nextButton.setOnClickListener {
             counter--
-            counterTextView.text = counter.toString()
+            binding.counterTextView.text = counter.toString()
         }
     }
 }
-
